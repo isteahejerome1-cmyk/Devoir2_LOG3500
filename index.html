@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Mondial Interactif - LOG3500</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Atlas Mondial Interactif</h1>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <form id="search-form" novalidate>
+                <label for="country-input">Rechercher un pays :</label>
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="country-input" 
+                        placeholder="Ex: Canada, Haiti, France..." 
+                        autocomplete="off"
+                    >
+                    <button type="submit">Rechercher</button>
+                </div>
+                <span id="error-message" class="error-text" aria-live="assertive"></span>
+            </form>
+        </section>
+
+        <div id="loader" class="hidden">Chargement des données...</div>
+
+        <section id="country-card" aria-live="polite"></section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Jerome Elie | DUT en TIC | ISTEAH</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html> 
