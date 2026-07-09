@@ -1,0 +1,117 @@
+/* --- Style Jeneral --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* --- Zòn Rechèch --- */
+.search-container {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #3498db;
+}
+
+input[type="text"][aria-invalid="true"] {
+    border-color: #e74c3c;
+    background-color: #fdeaea;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* --- Kat Enfòmasyon Peyi a --- */
+.country-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.flag {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.country-details {
+    text-align: left;
+}
+
+.country-details p {
+    font-size: 16px;
+    margin: 10px 0;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 8px;
+}
+
+.country-details strong {
+    color: #2c3e50;
+}
+
+/* --- Mesaj Erè --- */
+.error-message {
+    color: #e74c3c;
+    background-color: #fdeaea;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #f5c6cb;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+    }
+    button {
+        width: 100%;
+    }
+}
