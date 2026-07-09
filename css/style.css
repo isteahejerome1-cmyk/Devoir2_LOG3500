@@ -1,27 +1,60 @@
 /* --- Style Jeneral --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
     color: #333;
-    margin: 0;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+header h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+}
+
+main {
+    width: 100%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
+/* --- Zòn Rechèch --- */
+.search-section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    width: 100%;
 }
 
-/* --- Zòn Rechèch --- */
-.search-container {
-    margin-bottom: 30px;
+.search-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.input-group {
     display: flex;
     gap: 10px;
-    width: 100%;
-    max-width: 500px;
 }
 
 input[type="text"] {
@@ -50,12 +83,35 @@ button {
     border: none;
     border-radius: 8px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #2980b9;
+}
+
+/* --- Mesaj Erè --- */
+.error-text {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    font-size: 14px;
+}
+
+/* --- Loader (Chajman) --- */
+#loader {
+    font-weight: bold;
+    color: #3498db;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+/* Klas pou kache eleman */
+.hidden {
+    display: none !important;
 }
 
 /* --- Kat Enfòmasyon Peyi a --- */
@@ -65,8 +121,8 @@ button:hover {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     padding: 25px;
     width: 100%;
-    max-width: 450px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .flag {
@@ -76,6 +132,13 @@ button:hover {
     border-radius: 6px;
     border: 1px solid #eee;
     margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.country-card h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
 .country-details {
@@ -93,22 +156,18 @@ button:hover {
     color: #2c3e50;
 }
 
-/* --- Mesaj Erè --- */
-.error-message {
-    color: #e74c3c;
-    background-color: #fdeaea;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #f5c6cb;
-    max-width: 500px;
-    width: 100%;
+/* --- Pye Paj --- */
+footer {
+    margin-top: auto;
+    padding: 20px;
     text-align: center;
-    font-weight: bold;
+    color: #7f8c8d;
+    font-size: 14px;
 }
 
 /* --- Responsive Design --- */
-@media (max-width: 600px) {
-    .search-container {
+@media (max-width: 480px) {
+    .input-group {
         flex-direction: column;
     }
     button {
