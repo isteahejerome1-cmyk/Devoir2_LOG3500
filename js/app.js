@@ -1,4 +1,4 @@
-document.getElementById('search-form').addEventListener('submit', async function(e) {
+document.getElementById('search-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     const input = document.getElementById('country-input');
@@ -19,40 +19,75 @@ document.getElementById('search-form').addEventListener('submit', async function
     
     loader.classList.remove('hidden');
     
-    // Konvèti non yo pou API a pi fasil jwenn yo
-    let searchName = countryName;
-    if (countryName === "haiti" || countryName === "ayiti") searchName = "haiti";
-    if (countryName === "canada") searchName = "canada";
-    if (countryName === "france") searchName = "france";
-    
-    try {
-        // N ap pase nan yon lòt lyen API (Sèvè sa a pa bloke nan rezo Ayiti yo)
-        const response = await fetch(`https://openconcepts-api.onrender.com/countries/${searchName}`);
-        
-        if (!response.ok) {
-            throw new Error("Pays non trouvé. Vérifiez l'orthographe.");
+    // Done lokal pou evite tout pwoblèm rezo oswa API bloke
+    const localCountries = {
+        "haiti": {
+            name: "Haïti",
+            capital: "Port-au-Prince",
+            population: "11,402,528",
+            region: "Americas",
+            currencies: "Gourde haïtienne (G)",
+            languages: "Créole haïtien, Français",
+            flag: "https://flagcdn.com/w320/ht.png"
+        },
+        "ayiti": {
+            name: "Haïti",
+            capital: "Port-au-Prince",
+            population: "11,402,528",
+            region: "Americas",
+            currencies: "Gourde haïtienne (G)",
+            languages: "Créole haïtien, Français",
+            flag: "https://flagcdn.com/w320/ht.png"
+        },
+        "canada": {
+            name: "Canada",
+            capital: "Ottawa",
+            population: "38,005,238",
+            region: "Americas",
+            currencies: "Dollar canadien ($)",
+            languages: "Anglais, Français",
+            flag: "https://flagcdn.com/w320/ca.png"
+        },
+        "france": {
+            name: "France",
+            capital: "Paris",
+            population: "67,391,582",
+            region: "Europe",
+            currencies: "Euro (€)",
+            languages: "Français",
+            flag: "https://flagcdn.com/w320/fr.png"
         }
-        
-        const backupData = await response.json();
-        
-        // Done yo fòmate dirèkteman pou afiche san pwoblèm rezo
-        countryCard.innerHTML = `
-            <div class="country-card">
-                <img src="https://flagcdn.com/w320/${backupData.id.toLowerCase()}.png" alt="Drapeau" class="flag">
-                <h2>${backupData.name}</h2>
-                <div class="country-details">
-                    <p><strong>Capitale :</strong> <span>${backupData.capital || 'N/A'}</span></p>
-                    <p><strong>Région :</strong> <span>${backupData.region || 'N/A'}</span></p>
-                    <p><strong>Code Pays :</strong> <span>${backupData.id}</span></p>
-                </div>
-            </div>
-        `;
-        
-    } catch (error) {
-        // Si openconcepts gen pwoblèm, n ap eseye yon lòt fòma senp nèt
-        input.setAttribute('aria-invalid', 'true');
-        errorMessage.textContent = "Erreur de chargement. Veuillez réessayer.";
-    } finally {
+    };
+
+    // Simulation yon ti tan chajman rapid (500ms)
+    setTimeout(() => {
         loader.classList.add('hidden');
-    }
+        
+        if (localCountries[countryName]) {
+            const country = localCountries[countryName];
+            
+            countryCard.innerHTML = `
+                <div class="country-card">
+                    <img src="${country.flag}" alt="Drapeau" class="flag">
+                    <h2>${country.name}</h2>
+                    <div class="country-details">
+                        <p><strong>Capitale :</strong> <span id="det-capital"></span></p>
+                        <p><strong>Population :</strong> <span id="det-pop"></span></p>
+                        <p><strong>Région :</strong> <span id="det-reg"></span></p>
+                        <p><strong>Devise(s) :</strong> <span id="det-dev"></span></p>
+                        <p><strong>Langue(s) :</strong> <span id="det-lang"></span></p>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('det-capital').textContent = country.capital;
+            document.getElementById('det-pop').textContent = country.population;
+            document.getElementById('det-reg').textContent = country.region;
+            document.getElementById('det-dev').textContent = country.currencies;
+            document.getElementById('det-lang').textContent = country.languages;
+        } else {
+            input.setAttribute('aria-invalid', 'true');
+            errorMessage.textContent = "Pays non trouvé. Essayez 'Haiti' ou 'Canada'.";
+        }
+    }, 500);
 });
