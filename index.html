@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- Gwo Meni Navigasyon anlè a (Navbar) jan pwofesè a mande l la -->
+    <!-- Gwo Meni Navigasyon anlè a (Navbar) -->
     <nav class="navbar">
         <div class="nav-left">
             <div class="logo-globe">🌐</div>
@@ -40,7 +40,7 @@
     </nav>
 
     <main>
-        <!-- Ti lyen pou tounen anlè a k ap parèt byen bèl -->
+        <!-- Ti lyen navigasyon anlè kontni an -->
         <div class="back-link">
             <a href="#">&larr; Back to Americas</a>
         </div>
@@ -49,127 +49,10 @@
 
         <div id="loader" class="hidden">Chargement des données...</div>
 
-        <section id="country-card" aria-live="polite"></section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 - Jerome Elie | DUT en TIC | ISTEAH</p>
-    </footer>
-
-    <script src="js/app.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas Mondial Interactif - LOG3500</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-    <!-- Gwo Meni Navigasyon anlè a (Navbar) jan pwofesè a mande l la -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <div class="logo-globe">🌐</div>
-            <span class="site-title">World Atlas</span>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#" class="active">Countries</a></li>
-            <li><a href="#">Regions</a></li>
-            <li><a href="#">Map</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-        
-        <div class="nav-right">
-            <form id="search-form" class="nav-search-form" novalidate>
-                <div class="search-box-wrapper">
-                    <span class="search-icon">🔍</span>
-                    <input 
-                        type="text" 
-                        id="country-input" 
-                        placeholder="Search countries..." 
-                        autocomplete="off"
-                    >
-                </div>
-                <button type="submit" class="btn-search">Rechercher</button>
-            </form>
-        </div>
-    </nav>
-
-    <main>
-        <!-- Ti lyen pou tounen anlè a k ap parèt byen bèl -->
-        <div class="back-link">
-            <a href="#">&larr; Back to Americas</a>
-        </div>
-
-        <span id="error-message" class="error-text" aria-live="assertive"></span>
-
-        <div id="loader" class="hidden">Chargement des données...</div>
-
-        <section id="country-card" aria-live="polite"></section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 - Jerome Elie | DUT en TIC | ISTEAH</p>
-    </footer>
-
-    <script src="js/app.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas Mondial Interactif - LOG3500</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-    <!-- Gwo Meni Navigasyon anlè a (Navbar) jan pwofesè a mande l la -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <div class="logo-globe">🌐</div>
-            <span class="site-title">World Atlas</span>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#" class="active">Countries</a></li>
-            <li><a href="#">Regions</a></li>
-            <li><a href="#">Map</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-        
-        <div class="nav-right">
-            <form id="search-form" class="nav-search-form" novalidate>
-                <div class="search-box-wrapper">
-                    <span class="search-icon">🔍</span>
-                    <input 
-                        type="text" 
-                        id="country-input" 
-                        placeholder="Search countries..." 
-                        autocomplete="off"
-                    >
-                </div>
-                <button type="submit" class="btn-search">Rechercher</button>
-            </form>
-        </div>
-    </nav>
-
-    <main>
-        <!-- Ti lyen pou tounen anlè a k ap parèt byen bèl -->
-        <div class="back-link">
-            <a href="#">&larr; Back to Americas</a>
-        </div>
-
-        <span id="error-message" class="error-text" aria-live="assertive"></span>
-
-        <div id="loader" class="hidden">Chargement des données...</div>
-
-        <section id="country-card" aria-live="polite"></section>
+        <!-- Seccion pwofesè a te mande a ak tit idantifikasyon kache pou A11y -->
+        <section id="country-card" aria-live="polite">
+            <h2 class="hidden">Résultats de la recherche</h2>
+        </section>
     </main>
 
     <footer>
